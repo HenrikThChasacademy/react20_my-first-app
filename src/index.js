@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./style/normalize.css"
+import "./style/index.css";
 import Table from "./Table";
 
 class App extends React.Component {
@@ -8,8 +9,12 @@ class App extends React.Component {
     return (
       <div>
         <div className="App">
+          <div className="title-row">
           <h1>Hello, React!</h1>
-          <Table />
+          </div>
+          <div className="table-wrapper">
+            <Table />
+          </div>
         </div>
       </div>
     );

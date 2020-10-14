@@ -21,7 +21,6 @@ class Table extends Component {
   };
 
   handleChange = (e) => {
-    this.addRow();
     let thelon = e.target.value;
     console.log("handleChange", this.state);
     this.setState((state)=>({ 
@@ -33,7 +32,10 @@ class Table extends Component {
   render() {
     return (
       <React.Fragment>
-        <table border="1">
+        <div className="input-div">
+          <button className="row-button" onClick={this.addRow}>Lägg till rad</button> <br></br>
+        </div>
+        <table className="table-style" id="personal">
           <thead>
             <tr>
               <th>Namn</th>
@@ -53,14 +55,17 @@ class Table extends Component {
             })}
           </tbody>
         </table>
-        <button onClick={this.addRow}>Lägg till rad</button> <br></br>
-        <input
-          type="text"
-          id="usernamn"
-          name="usernamn"
-          onChange={this.handleChange}
-        ></input>
-        <h1>{this.state.lon}</h1>
+        <hr></hr>
+        <div>
+          <input
+                className="form-input-text"
+                type="text"
+                id="usernamn"
+                name="usernamn"
+                onChange={this.handleChange}
+              ></input>
+          <h1>{this.state.lon}</h1>
+        </div>
       </React.Fragment>
     );
   }
